@@ -7,6 +7,9 @@ try {
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  output: "export", // This ensures Next.js generates static HTML files
+  basePath: "/Masarat-Events", // Use your repository name here
+  trailingSlash: true, // Adds trailing slashes to paths for GitHub Pages compatibility
   eslint: {
     ignoreDuringBuilds: true,
   },
