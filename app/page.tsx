@@ -1,3 +1,5 @@
+'use client'
+
 import VideoHero from "./components/VideoHero"
 import Services from "./components/Services"
 import ProjectCard from "./components/ProjectCard"
