@@ -68,13 +68,13 @@ export default function ProjectCard({ title, images, className = '' }: ProjectCa
     }
   }, [])
 
-  const handleDragStart = (event: React.MouseEvent<HTMLDivElement> | React.TouchEvent<HTMLDivElement>) => {
-    if ('touches' in event) {
-      dragStartX.current = event.touches[0].clientX
-    } else {
-      dragStartX.current = event.clientX
+  const handleDragStart = (event: MouseEvent | TouchEvent | PointerEvent, info: PanInfo) => {
+      if ('touches' in event) {
+        dragStartX.current = (event as TouchEvent).touches[0].clientX
+      } else {
+        dragStartX.current = (event as MouseEvent).clientX
+      }
     }
-  }
 
   const handleDragEnd = (event: MouseEvent | TouchEvent | PointerEvent, info: PanInfo) => {
     const dragEndX = 'touches' in event ? (event as TouchEvent).changedTouches[0].clientX : (event as MouseEvent).clientX
